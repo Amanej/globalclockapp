@@ -16,19 +16,22 @@ var clock = new Vue({
                 {
                     name: "San Francisco",
                     id: "sanfrancisco",
-                    active: true
+                    active: false
                 }
             ],
             time: new Date(),
+            selectedCity: ""
         }
+    },
+    computed: {
+
     },
     created () {
         setInterval(function() {
             var d = new Date();
-            //console.log(d);
             var localeSpecificTime = d.toLocaleTimeString();
             localeSpecificTime.replace(/:\d+ /, ' ');
             clock.time = localeSpecificTime;
         }, 1000)
     }
-})
+});
