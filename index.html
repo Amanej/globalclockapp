@@ -2,18 +2,61 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Global clock</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
 
+    <div class="clock" id="clock">
+      <h2>{{time}}</h2>
+      <div class="cities">
+        <label v-for="city in cities" for="newyork">
+          <input type="radio" name="city" :value="city.name" :id="city.id" v-model="city.active" />
+          {{city.name}}
+        </label>
+      </div>
+      <button class="addACity">Add a city</button>
+      <select style="display: none;">
+        <option value="Stockholm">Stockholm</option>
+        <option value="Moscow">Moscow</option>
+        <option value="Beijing">Beijing</option>
+      </select>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./libraries/moment/moment.js"></script>
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
+      require('./app.js');
     </script>
+
+    <style>
+      html {
+        background: black;
+        font-family: 'Orbitron';
+        padding: 10px;
+      }
+      h2 {
+        padding: 20px;
+        color: green;
+        text-shadow: 0px 0px 12px rgba(50, 158, 50, 0.58);     
+        font-size: 48px;   
+        text-align: center;
+      }
+      .cities > label {
+        color: white;
+      }
+      button {
+        width: 20%;
+        padding: 10px;
+        font-size: 14px;
+        display: block;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: none;        
+        font-family: 'Orbitron';
+      }
+    </style>
   </body>
 </html>
