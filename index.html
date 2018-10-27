@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="width: 375px; height: 200px;" width="370px" height="200px">
   <head>
     <meta charset="UTF-8">
     <title>Global clock</title>
@@ -10,7 +10,7 @@
     
     <div class="clock" id="clock">
       <h2>{{time}}</h2>
-      <p style="color:white;" class="selectedCity" v-if="selectedCity">{{selectedCity}}</p>
+      <!---<p style="color:white;" class="selectedCity" v-if="selectedCity">{{selectedCity}}</p>-->
       <!---<p style="color:white;" >{{selectedTimeZone}}</p>-->
       <div class="cities">
         <label v-for="city in cities" :for="city.id">
