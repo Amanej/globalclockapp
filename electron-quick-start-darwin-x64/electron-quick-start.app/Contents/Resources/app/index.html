@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Global clock</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  </head>
+  <body>
+
+    
+    <div class="clock" id="clock">
+      <h2>{{time}}</h2>
+      <p style="color:white;" class="selectedCity" v-if="selectedCity">{{selectedCity}}</p>
+      <!---<p style="color:white;" >{{selectedTimeZone}}</p>-->
+      <div class="cities">
+        <label v-for="city in cities" :for="city.id">
+          <input type="radio" name="city" :value="city.name" :id="city.id" v-model="selectedCity" />
+          {{city.name}}
+        </label>
+      </div>
+      <button class="addACity">Add a city</button>
+      <select style="display: none;">
+        <option value="Stockholm">Stockholm</option>
+        <option value="Moscow">Moscow</option>
+        <option value="Beijing">Beijing</option>
+      </select>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./libraries/moment/moment.js"></script>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+      require('./app.js');
+    </script>
+
+    <style>
+      html {
+        background: black;
+        font-family: 'Orbitron';
+        padding: 10px;
+      }
+      h2 {
+        padding: 20px;
+        color: green;
+        text-shadow: 0px 0px 12px rgba(50, 158, 50, 0.58);     
+        font-size: 48px;   
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      p.selectedCity {
+        color: white;
+      }
+      .cities {
+        margin-bottom: 10px;
+      }
+      .cities > label {
+        color: white;
+        font-size: 12px;
+      }
+      button {
+        width: 20%;
+        padding: 10px;
+        font-size: 14px;
+        display: block;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: none;        
+        font-family: 'Orbitron';
+      }
+      button.addACity {
+        margin: 0;
+        width: 100%;
+      }
+    </style>
+  </body>
+</html>
