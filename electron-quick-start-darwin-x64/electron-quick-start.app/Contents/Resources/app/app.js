@@ -22,7 +22,7 @@ var clock = new Vue({
                     active: false
                 }
             ],
-            time: new Date(),
+            time: "Loading",
             selectedCity: ""
         }
     },
@@ -42,10 +42,11 @@ var clock = new Vue({
                 timezone = clock.selectedTimeZone.timezone;
             }
             
-            console.log("Selected city ",clock.selectedCity)
-            console.log("Selected timezone ",clock.selectedTimeZone.timezone)
-            var localeSpecificTime = d.toLocaleString('en-US', { timeZone: timezone })
-            //console.log("Today "+localeSpecificTime);;
+            //console.log("Selected city ",clock.selectedCity);
+            //console.log("Selected timezone ",clock.selectedTimeZone.timezone)
+            //var localeSpecificTime = d.toLocaleString('en-US', { timeZone: timezone })
+            var localeSpecificTime = d.toLocaleTimeString('en-GB', { timeZone: timezone });
+            console.log("Today "+localeSpecificTime);;
             localeSpecificTime.replace(/:\d+ /, ' ');
             clock.time = localeSpecificTime;
         }, 1000);

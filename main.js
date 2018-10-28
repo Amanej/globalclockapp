@@ -8,7 +8,7 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 375, height: 180})
-  mainWindow.setAlwaysOnTop = true;
+  mainWindow.alwaysOnTop = true;
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
