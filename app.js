@@ -4,33 +4,52 @@ var clock = new Vue({
         return {
             cities: [
                 {
+                    name: "Addis Ababa",
+                    id: "addis",
+                    timezone: "Africa/Addis_Ababa",
+                    added: false,
+                    active: false
+                },
+                {
+                    name: "Asmara",
+                    id: "asmara",
+                    timezone: "Africa/Asmara",
+                    added: true,
+                    active: false
+                },
+                {
+                    name: "Cairo",
+                    id: "cairo",
+                    timezone: "Africa/Cairo",
+                    added: false,
+                    active: false
+                },
+                {
+                    name: "Chicago",
+                    id: "chicago",
+                    timezone: "America/Chicago",
+                    added: false,
+                    active: false
+                },
+                {
                     name: "Oslo",
                     id: "oslo",
                     timezone: "Europe/Oslo",
+                    added: true,
                     active: false
                 },
                 {
                     name: "New York",
                     id: "newyork",
                     timezone: "America/New_York",
-                    active: false
-                },
-                {
-                    name: "Oslo",
-                    id: "oslo",
-                    timezone: "Europe/Oslo",
-                    active: false
-                },
-                {
-                    name: "New York",
-                    id: "newyork",
-                    timezone: "America/New_York",
+                    added: true,
                     active: false
                 },
                 {
                     name: "San Francisco",
                     id: "sanfrancisco",
                     timezone: "America/Los_Angeles",
+                    added: true,
                     active: false
                 }
             ],
@@ -40,6 +59,9 @@ var clock = new Vue({
         }
     },
     computed: {
+        activeCities: function() {
+            return this.cities.filter(c => c.added);
+        },
         selectedTimeZone: function() {
             console.log(this.selectedCity);
             var activeCities = this.cities.filter(c => c.name === this.selectedCity);
