@@ -69,6 +69,11 @@ var clock = new Vue({
             return activeCities[0]
         }
     },
+    methods: {
+        setCity: function() {
+            console.log("Set city");
+        }
+    },
     created () {
         setInterval(function(timezone) {
             var d = new Date();
