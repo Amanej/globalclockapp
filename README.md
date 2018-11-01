@@ -4,7 +4,7 @@ Description: An open-source and customizable global clock.
 
 ## Screenshot
 
-![Kiku](assets/screenshot.png)
+![Image](assets/screenshot.png)
 
 ## Background
 
