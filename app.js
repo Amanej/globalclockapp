@@ -16,6 +16,18 @@ var clock = new Vue({
                     active: false
                 },
                 {
+                    name: "Oslo",
+                    id: "oslo",
+                    timezone: "Europe/Oslo",
+                    active: false
+                },
+                {
+                    name: "New York",
+                    id: "newyork",
+                    timezone: "America/New_York",
+                    active: false
+                },
+                {
                     name: "San Francisco",
                     id: "sanfrancisco",
                     timezone: "America/Los_Angeles",
@@ -23,7 +35,8 @@ var clock = new Vue({
                 }
             ],
             time: "Loading",
-            selectedCity: ""
+            selectedCity: "",
+            showCities: false
         }
     },
     computed: {

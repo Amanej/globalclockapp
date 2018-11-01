@@ -18,8 +18,12 @@
           {{city.name}}
         </label>
       </div>
-      <button class="addACity">Add a city</button>
-      <select style="display: none;">
+      <!--
+      <label for="addACity" class="addACity">
+        Add a city
+      </label>
+      -->
+      <select class="addACity">
         <option value="Stockholm">Stockholm</option>
         <option value="Moscow">Moscow</option>
         <option value="Beijing">Beijing</option>
@@ -54,11 +58,14 @@
         color: white;
       }
       .cities {
-        margin-bottom: 10px;
+        overflow: auto;
+        white-space: nowrap;
       }
       .cities > label {
         color: white;
         font-size: 12px;
+        padding: 12px;
+        display: inline-block;
       }
       button {
         width: 20%;
@@ -73,6 +80,27 @@
       button.addACity {
         margin: 0;
         width: 100%;
+      }
+      label.addACity {
+        color: white;
+        text-align: center;
+        padding: 5px 10px;
+        background: green;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 100;
+      }
+      input.addACity {
+        display: none;
+      }
+      select.addACity {
+        margin: auto;
+        display: block;
+        width: 100%;
+      }
+      .titlebar {
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
       }
     </style>
   </body>
