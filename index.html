@@ -18,7 +18,8 @@
       </div>
       
       <select class="addACity" @change="setCity">
-        <option :value="city.id" v-for="city in cities">{{city.name}}</option>
+        <option default disabled>Add a city</option>
+        <option :value="city.id" v-for="city in notSelectedCities">{{city.name}}</option>
       </select>
       
     </div>

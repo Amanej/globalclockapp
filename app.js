@@ -32,6 +32,13 @@ var clock = new Vue({
                     active: false
                 },
                 {
+                    name: "Hong Kong",
+                    id: "hongkong",
+                    timezone: "Asia/Hong_Kong",
+                    added: true,
+                    active: false
+                },
+                {
                     name: "Oslo",
                     id: "oslo",
                     timezone: "Europe/Oslo",
@@ -59,6 +66,9 @@ var clock = new Vue({
         }
     },
     computed: {
+        notSelectedCities: function() {
+            return this.cities.filter(c => !c.added);
+        },
         activeCities: function() {
             return this.cities.filter(c => c.added);
         },
