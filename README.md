@@ -1,5 +1,7 @@
 # Global Clock App
 
+[![CircleCI](https://circleci.com/gh/Amanej/globalclockapp.svg?style=svg)](https://circleci.com/gh/Amanej/globalclockapp)
+
 Description: An open-source and customizable global clock.
 
 ## Screenshot
