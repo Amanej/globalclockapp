@@ -23,3 +23,6 @@ In no particular order.
 4. Smoother clock countdown
 5. Force to be always on top (is this possible with Electron)
 6. CircleCi integration
+6.1 Add build of mac app to circleci
+6.2 Add build of win app to circleci
+6.2 Add build of linux app to circleci
