@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Global clock</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  </head>
+  <body>
+
+    
+    <div class="clock" id="clock">
+      <h2>{{time}}</h2>
+      <div class="cities">
+        <label v-for="city in activeCities" :for="city.id">
+          <input type="radio" name="city" :value="city.name" :id="city.id" v-model="selectedCity" />
+          {{city.name}}
+        </label>
+      </div>
+      
+      <select class="addACity" @change="setCity">
+        <option default disabled>Add a city</option>
+        <option :value="city.id" v-for="city in notSelectedCities">{{city.name}}</option>
+      </select>
+      
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="./libraries/moment/moment.js"></script>
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+      require('./app.js');
+    </script>
+
+    <style>
+      html {
+        background: black;
+        font-family: 'Orbitron';
+        padding: 10px;
+        padding: 4%;
+      }
+      h2 {
+        padding: 20px;
+        color: green;
+        text-shadow: 0px 0px 12px rgba(50, 158, 50, 0.58);     
+        font-size: 48px;   
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      p.selectedCity {
+        color: white;
+      }
+      .cities {
+        overflow: auto;
+        white-space: nowrap;
+      }
+      .cities > label {
+        color: white;
+        font-size: 12px;
+        padding: 12px;
+        display: inline-block;
+      }
+      button {
+        width: 20%;
+        padding: 10px;
+        font-size: 14px;
+        display: block;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: none;        
+        font-family: 'Orbitron';
+      }
+      button.addACity {
+        margin: 0;
+        width: 100%;
+      }
+      label.addACity {
+        color: white;
+        text-align: center;
+        padding: 5px 10px;
+        background: green;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 100;
+      }
+      input.addACity {
+        display: none;
+      }
+      select.addACity {
+        margin: auto;
+        display: block;
+        width: 100%;
+      }
+      .titlebar {
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+      }
+    </style>
+  </body>
+</html>

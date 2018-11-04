@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "test": "node test"
+    "test": "node test",
+    "build": "electron-packager . --name='Global Clock' --overwrite --platform=darwin --arch=x64 --icon=/Users/aman/Documents/Prosjekter/GlobalClock/global-clock/assets/icons/globeIconGreen.icns --prune=true --out=../release-builds"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
