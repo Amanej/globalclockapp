@@ -12,7 +12,7 @@
       <h2>{{time}}</h2>
       <div class="cities">
         <label v-for="city in activeCities" :for="city.id">
-          <input type="radio" name="city" :value="city.name" :id="city.id" v-model="selectedCity" />
+          <input type="radio" name="city" :value="city.name" :id="city.id" v-model="selectedCity" checked="city.active" />
           {{city.name}}
         </label>
       </div>

@@ -43,7 +43,7 @@ var clock = new Vue({
                     id: "oslo",
                     timezone: "Europe/Oslo",
                     added: true,
-                    active: false
+                    active: true
                 },
                 {
                     name: "New York",
@@ -61,7 +61,7 @@ var clock = new Vue({
                 }
             ],
             time: "Loading",
-            selectedCity: "",
+            selectedCity: "oslo",
             showCities: false
         }
     },
@@ -80,8 +80,19 @@ var clock = new Vue({
         }
     },
     methods: {
-        setCity: function() {
+        setCity: function(e) {
             console.log("Set city");
+            console.log(e.target.value);
+            var cityIndex = this.cities.findIndex(c => c.id === e.target.value);
+            console.log("City index ",cityIndex);
+            if(cityIndex+1) {
+                this.cities[cityIndex].added = true;
+    
+                var activeCityIndex = this.cities.findIndex(c => c.active);
+                console.log("activeCityIndex ",activeCityIndex);
+                this.cities[activeCityIndex].active = false;
+                this.cities[cityIndex].active = true;
+            }
         }
     },
     created () {
@@ -92,13 +103,12 @@ var clock = new Vue({
                 timezone = clock.selectedTimeZone.timezone;
             }
             
-            //console.log("Selected city ",clock.selectedCity);
-            //console.log("Selected timezone ",clock.selectedTimeZone.timezone)
-            //var localeSpecificTime = d.toLocaleString('en-US', { timeZone: timezone })
             var localeSpecificTime = d.toLocaleTimeString('en-GB', { timeZone: timezone });
-            console.log("Today "+localeSpecificTime);;
+            //console.log("Today "+localeSpecificTime);;
             localeSpecificTime.replace(/:\d+ /, ' ');
             clock.time = localeSpecificTime;
         }, 1000);
+
+
     }
 });
