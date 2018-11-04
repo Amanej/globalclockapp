@@ -1,12 +1,12 @@
 {
-  "name": "electron-quick-start",
+  "name": "global-clock",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A global desktop clock",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "test": "node test",
-    "build": "electron-packager . --name='Global Clock' --overwrite --platform=darwin --arch=x64 --icon=/Users/aman/Documents/Prosjekter/GlobalClock/global-clock/assets/icons/globeIconGreen.icns --prune=true --out=../release-builds"
+    "build": "electron-packager . --name=GlobalClock --overwrite --platform=darwin --arch=x64 --icon=/Users/aman/Documents/Prosjekter/GlobalClock/global-clock/assets/icons/globeIconGreen.icns --prune=true --out=../release-builds"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -16,7 +16,7 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Aman Mender",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^3.0.4",
